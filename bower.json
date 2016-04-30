@@ -4,5 +4,6 @@
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.2.4",
     "c3": "^0.4.10"
-  }
+  },
+  "dependencies": { }
 }
