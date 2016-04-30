@@ -1,0 +1,32 @@
+
+<ion-navbar *navbar>
+  <ion-title>Sources</ion-title>
+</ion-navbar>
+
+<ion-content class="sources">
+
+  <ion-list>
+    <ion-item *ngFor="#source of sources">
+        {{source.name}} {{source.unit}} {{source.delta}}
+    </ion-item>
+  </ion-list>
+</ion-content>
+<div class="fixed-outside">
+  <form [ngFormModel]="sourceForm" (ngSubmit)="onSubmit(sourceForm.value)">
+    <ion-item [class.error]="!name.valid && name.touched">
+        <ion-label floating>Name :</ion-label>
+        <ion-input type="text" value="" [ngFormControl]="name"></ion-input>
+    </ion-item>
+    <ion-item [class.error]="!unit.valid && unit.touched">
+        <ion-label floating>Unit :</ion-label>
+        <ion-input type="text" value="" [ngFormControl]="unit"></ion-input>
+    </ion-item>
+    <ion-item [class.error]="!delta.valid && delta.touched">
+        <ion-label floating>Delta :</ion-label>
+        <ion-input type="number" value="0.0" [ngFormControl]="delta"></ion-input>
+    </ion-item>    
+    <button type="submit" class="custom-button" [disabled]="!sourceForm.valid" block>
+      <ion-icon name="md-add-circle"></ion-icon>
+      Add</button>  
+  </form>
+</div>
