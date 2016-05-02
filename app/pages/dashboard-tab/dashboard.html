@@ -3,6 +3,16 @@
 </ion-navbar>
 
 <ion-content padding class="dashboard">
-  <div id="thermo" style="font-family: Arial;padding: 10px 20px;"></div>
+<ion-row>
+  <ion-col width-33></ion-col>
+  <ion-col width-33>
+  	<div id="thermo1" style="font-family: Arial;padding: 10px 20px;"></div>
+  </ion-col>
+  <ion-col width-33>
+  	<div id="thermo2" style="font-family: Arial;padding: 10px 20px;"></div>
+  </ion-col>
+</ion-row>  
+  <!-- <thermometer width='80' height='180' maxTemp='500' minTemp='50' currentTemp='220' step='100'></thermometer> -->
+
   <div id="chart" style="margin-top: 2%"></div>
 </ion-content>
