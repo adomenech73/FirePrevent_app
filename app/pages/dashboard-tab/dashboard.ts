@@ -12,8 +12,9 @@ export class PageDashboard{
     ngAfterViewInit(){
       this.drawThermometer(80, 180, 500, 50, 220, 100, "#thermo1");
       this.drawThermometer(80, 180, 500, 50, 350, 100, "#thermo2");
-      this.redrawThermometer(80, 180, 500, 50, 120, 100, "#thermo1");
-      this.redrawThermometer(80, 180, 500, 50, 450, 100, "#thermo2");
+
+      //this.redrawThermometer(80, 180, 500, 50, 120, 100, "#thermo1");
+      //this.redrawThermometer(80, 180, 500, 50, 450, 100, "#thermo2");
 
       var chart = c3.generate({
         data: {
@@ -309,8 +310,7 @@ export class PageDashboard{
       var tubeFill_bottom = bulb_cy,
         tubeFill_top = scale(currentTemp);
 
-      var svgSelection = d3.select(selector).select('#mercuryLine').append("svg")
-        .attr("id", "mercuryLine")
+      var svgSelection = d3.select(selector).select('#mercuryLine')
         .attr("x", width / 2 - (tubeWidth - 10) / 2)
         .attr("y", tubeFill_top)
         .attr("width", tubeWidth - 10)
@@ -318,15 +318,5 @@ export class PageDashboard{
         .style("shape-rendering", "crispEdges")
         .style("fill", mercuryColor)
 
-
-      // Rect element for the red mercury column
-/*      svg.append("rect")
-        .attr("id", "mercuryLine")
-        .attr("x", width / 2 - (tubeWidth - 10) / 2)
-        .attr("y", tubeFill_top)
-        .attr("width", tubeWidth - 10)
-        .attr("height", tubeFill_bottom - tubeFill_top)
-        .style("shape-rendering", "crispEdges")
-        .style("fill", mercuryColor)   */
     }
 }
